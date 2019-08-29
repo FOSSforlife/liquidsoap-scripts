@@ -3,8 +3,8 @@
 %include "secret.liq"
 set("init.daemon.pidfile.path", "/home/ej/.opam/4.07.1/bin/liquidsoap")
 
-favorites=playlist("#{liqpath}/music/favorites")
-other=playlist("#{liqpath}/music/other")
+favorites=normalize(playlist("#{liqpath}/music/favorites"))
+other=normalize(playlist("#{liqpath}/music/other"))
 fallbacksingle=single("#{homepath}/shockfront.mp3")
 
 radio=random(weights=[2,3], [favorites, other])
